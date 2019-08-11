@@ -11,7 +11,9 @@ ActiveWindow(){
 }
 
 
-
+Ip(){
+	 ifconfig | grep "inet " | awk '{print $2}' | tr '\n' ' '
+}
 
 Sound(){
 	amixer get Master | sed -n 'N;s/^.*\[\([0-9]\+%\).*$/\1/p'
@@ -32,7 +34,7 @@ Battery(){
 }
 
 while :; do
-	echo "%{c} $(ActiveWindow) " "%{r} RAM: $(Memory) - VOL: $(Sound) - BAT: $(Battery) - $(Clock)  " 
+	echo -e "%{c} $(ActiveWindow) " "%{r} \uf26b $(Ip) \uf2db $(Memory) \uf028 $(Sound)  \uf240 $(Battery)  $(Clock)  " 
 	#echo -e "%{c}$(ActiveWindow)" "%{r}$(Wifi)  $(Battery)  $(Sound)  $(Clock)"
 
 	

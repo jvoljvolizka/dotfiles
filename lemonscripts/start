@@ -1,3 +1,7 @@
 #!/bin/sh
 
-bash -c "/home/jvol/lemonscripts/bar.sh | lemonbar"
+. "${HOME}/.cache/wal/colors.sh"
+
+
+
+/home/jvol/lemonscripts/bar.sh | lemonbar -p -f "anonymous pro minus:size=12" -f "fontawesome" -B  "$color0" -F "$color8" 
