@@ -134,9 +134,9 @@ super + x
 #mediakeys
 
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	xbacklight -dec 5 ; dunstify  -r 5555 -u normal "  $(echo -e "\uf186" )  $(seq -s "─" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	xbacklight -inc 5 ; dunstify  -r 5555 -u normal "  $(echo -e "\uf185" )  $(seq -s "─" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
 XF86AudioLowerVolume
 	 amixer set Master 5%-
 XF86AudioRaiseVolume
