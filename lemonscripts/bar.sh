@@ -65,9 +65,12 @@ battery () {
 	printf "%s" "$battery"
 }
 
+Music() {
+	mpc current 2>/dev/null
+}
 
 while :; do
-	echo -e "%{l} $PANEL_FIFO $(ActiveWindow) " "%{r} \uf26b $(Ip)- \uf2db $(Memory) - $(Sound) - $(battery) - $(Clock)  " 
+	echo -e "%{l} $PANEL_FIFO $(ActiveWindow) " "%{c} $(Music)" "%{r} \uf26b $(Ip)- \uf2db $(Memory) - $(Sound) - $(battery) - $(Clock)  " 
 	
 done
 

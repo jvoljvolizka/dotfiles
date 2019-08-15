@@ -4,4 +4,4 @@
 
 
 
-/home/jvol/lemonscripts/bar.sh | lemonbar -p -f "anonymous pro minus:size=12" -f "fontawesome" -B  "$color0" -F "$color8" 
+/home/jvol/lemonscripts/bar.sh | lemonbar -p -f "anonymous pro minus:size=10" -f "fontawesome" -B  "$color0" -F "$color8" 

@@ -134,9 +134,9 @@ super + x
 #mediakeys
 
 XF86MonBrightnessDown
-	xbacklight -dec 5 ; dunstify  -r 5555 -u normal "  $(echo -e "\uf186" )  $(seq -s "─" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
+	xbacklight -dec 5 ; dunstify  -r 5555 -u low "  $(echo -e "\uf186" )     $(seq -s "█" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
 XF86MonBrightnessUp
-	xbacklight -inc 5 ; dunstify  -r 5555 -u normal "  $(echo -e "\uf185" )  $(seq -s "─" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
+	xbacklight -inc 5 ; dunstify  -r 5555 -u low "  $(echo -e "\uf185" )     $(seq -s "█" 0 $(($(xbacklight -get | cut -d '.' -f 1) / 5)) | sed 's/[0-9]//g')"
 XF86AudioLowerVolume
 	 amixer set Master 5%-
 XF86AudioRaiseVolume
@@ -150,4 +150,5 @@ super + c
 super + shift + c
 	bspc node -s next.local
 
-
+super + e;{Left,Down,Up,Right}
+	mpc {prev,pause,play,next}
