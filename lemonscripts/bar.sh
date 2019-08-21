@@ -13,7 +13,7 @@ ActiveWindow(){
 
 Ip(){
 	SSID=$(iwconfig 2>/dev/null |  grep -oP 'ESSID:"\K[^"]+')
-	IP=$(ifconfig | grep "inet " | awk '{print $2}' | tr '\n' ' ' | cut -b 11-)
+	IP=$(ifconfig | grep "inet " | awk '{print $2}' | tr '\n' ' ' | sed -e "s/127.0.0.1//" -e "s///")
 	echo -e -n "${SSID} ${IP}"  
 }
 
