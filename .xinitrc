@@ -7,11 +7,11 @@ wal -i /home/jvol/wal1-0.png
 xset +fp ~/.fonts/misc/
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 greenclip daemon &
-
+batteryalarm &
 pidof -s xautolock >& /dev/null
 if [ $? -ne 0 ]; then
   xautolock -time 60 -locker "systemctl suspend" &
 fi
-
+xsetroot -cursor_name left_ptr &
 dunst &
 exec bspwm
